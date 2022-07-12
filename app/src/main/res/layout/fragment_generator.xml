@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imgv_save_generated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_baseline_save_24"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imgv_clear_generated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imgv_generated_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgv_save_generated"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/qr_code" />
+
+    <ImageView
+    android:id="@+id/imgv_share"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_baseline_share_24"
+    android:layout_below="@+id/imgv_generated_code"
+    android:layout_alignParentRight="true"
+    android:layout_margin="16dp"
+    android:visibility="invisible"
+    />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/string_text_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imgv_share"
+        android:textColorHint="@color/svmc">
+
+        <EditText
+            android:id="@+id/edt_string_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/enter_your_string"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/string_text_input_layout"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp">
+
+        <Button
+            android:id="@+id/btn_generate_qr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/svmc_2"
+            android:text="@string/generate_qr_code" />
+
+        <Button
+            android:id="@+id/btn_generate_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/btn_generate_qr"
+            android:layout_weight="1"
+            android:backgroundTint="@color/svmc_2"
+            android:text="@string/generate_barcode" />
+
+    </LinearLayout>
+
+</RelativeLayout>
